@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>phpmath: PHP libraries for mathematics</title>
+<meta name="description" content="phpmath is a family of consistent, well-tested, immutable PHP libraries for big numbers, vectors and more.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <a class="brand" href="#" aria-label="phpmath home"><svg class="logo" viewBox="-12 40 876 190" role="img" aria-label="phpmath">
+<g fill="currentColor"><path fill-rule="evenodd" d="M0 66H44Q90 66 90 108Q90 150 44 150H28V208H0Z M28 94V122H44Q62 122 62 108Q62 94 44 94Z"/><path transform="translate(108 0)" d="M0 66H120V94H98V160Q98 180 112 180H120V208H104Q70 208 70 164V94H50V208H22V94H0Z"/><path fill-rule="evenodd" transform="translate(246 0)" d="M0 66H44Q90 66 90 108Q90 150 44 150H28V208H0Z M28 94V122H44Q62 122 62 108Q62 94 44 94Z"/>
+<g transform="translate(24 0)"><path transform="translate(376 0)" d="M0 108H28V118Q40 108 56 108Q84 108 84 140V208H56V144Q56 134 46 134Q28 134 28 150V208H0Z"/><path transform="translate(432 0)" d="M0 108H28V118Q40 108 56 108Q84 108 84 140V208H56V144Q56 134 46 134Q28 134 28 150V208H0Z"/>
+<path fill-rule="evenodd" transform="translate(542 0)" d="M50 108A50 50 0 1 0 50 208A50 50 0 1 0 50 108Z M50 136A22 22 0 1 1 50 180A22 22 0 1 1 50 136Z"/><path transform="translate(542 0)" d="M72 108H100V208H72Z"/>
+<path transform="translate(666 0)" d="M14 74H42V108H68V134H42V172Q42 182 52 182H68V208H50Q14 208 14 170V134H0V108H14Z"/><path transform="translate(752 0)" d="M0 66H28V118Q40 108 56 108Q84 108 84 140V208H56V144Q56 134 46 134Q28 134 28 150V208H0Z"/></g></g></svg></a>
+  <nav aria-label="Main"><a href="#libraries">Libraries</a><a href="#principles">Principles</a><a href="#contribute">Contribute</a><a href="https://github.com/phpmath">GitHub</a></nav>
+</div></header>
+
+<main>
+<div class="glow"><div class="wrap hero">
+  <div>
+    <h1>Precise math for modern PHP.</h1>
+    <p>Big numbers, vectors and more. Every library is immutable, fully tested and built to the same standard, so they all work the same way.</p>
+    <a class="btn primary" href="#libraries">Browse libraries</a>
+    <a class="btn" href="https://github.com/phpmath">View on GitHub</a>
+  </div>
+<pre><span class="c">// Arbitrary-precision integers, always immutable</span>
+<span class="k">use</span> PHP\Math\BigInteger\ImmutableBigInteger;
+
+<span class="k">$a</span> = <span class="k">new</span> <span class="f">ImmutableBigInteger</span>(<span class="s">'12345678901234567890'</span>);
+<span class="k">$b</span> = <span class="k">new</span> <span class="f">ImmutableBigInteger</span>(<span class="s">'98765432109876543210'</span>);
+
+<span class="k">echo</span> <span class="k">$a</span>-&gt;<span class="f">add</span>(<span class="k">$b</span>)-&gt;<span class="f">value</span>();
+<span class="c">// 111111111011111111100</span></pre>
+</div></div>
+
+<section id="libraries"><div class="wrap">
+  <h2>Libraries</h2>
+  <p class="lead">Each library is installable through Composer and published on Packagist.</p>
+  <div class="grid">
+    <article class="card">
+      <span class="badge ok">Active</span>
+      <h3>phpmath/biginteger</h3>
+      <p>Integers of any size, built on the GMP extension.</p>
+      <pre>composer require phpmath/biginteger</pre>
+      <div class="links"><a href="https://github.com/phpmath/biginteger">GitHub</a><a href="https://packagist.org/packages/phpmath/biginteger">Packagist</a></div>
+    </article>
+    <article class="card">
+      <span class="badge warn">Being modernized</span>
+      <h3>phpmath/bignumber</h3>
+      <p>Numbers of any size and precision, including decimals.</p>
+      <pre>composer require phpmath/bignumber</pre>
+      <div class="links"><a href="https://github.com/phpmath/bignumber">GitHub</a><a href="https://packagist.org/packages/phpmath/bignumber">Packagist</a></div>
+    </article>
+    <article class="card">
+      <span class="badge warn">Being modernized</span>
+      <h3>phpmath/vector</h3>
+      <p>Vectors in two and three dimensions: dot and cross products, scaling and normalization.</p>
+      <pre>composer require phpmath/vector</pre>
+      <div class="links"><a href="https://github.com/phpmath/vector">GitHub</a><a href="https://packagist.org/packages/phpmath/vector">Packagist</a></div>
+    </article>
+    <article class="card">
+      <span class="badge">Tooling</span>
+      <h3>phpmath/coding-standard</h3>
+      <p>The shared coding standard every phpmath library follows.</p>
+      <pre>composer require --dev phpmath/coding-standard</pre>
+      <div class="links"><a href="https://github.com/phpmath/coding-standard">GitHub</a><a href="https://packagist.org/packages/phpmath/coding-standard">Packagist</a></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="principles"><div class="wrap">
+  <h2>Principles</h2>
+  <p class="lead">What every phpmath library commits to.</p>
+  <div class="principles">
+    <div><h3>Consistent</h3><p>The same coding standard, structure, naming and documentation everywhere.</p></div>
+    <div><h3>Modern PHP</h3><p>Only supported PHP versions, with strict types and native type declarations.</p></div>
+    <div><h3>Well tested</h3><p>Unit tests, coverage and static analysis run on every change.</p></div>
+    <div><h3>Immutable by design</h3><p>Every number and vector is an immutable value object, always safe to share.</p></div>
+  </div>
+</div></section>
+
+<section id="contribute"><div class="wrap">
+  <h2>Contribute</h2>
+  <p class="lead">Found a bug or want a feature? Open an issue or pull request on the library's repository. Changes that follow the shared coding standard and include tests are very welcome.</p>
+  <a class="btn primary" href="https://github.com/phpmath">Visit the organization</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">© phpmath contributors · Released under the MIT license · <a href="https://github.com/phpmath/phpmath.github.io">Edit this page</a></div></footer>
+</body>
+</html>
