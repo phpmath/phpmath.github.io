@@ -38,13 +38,15 @@ section+section{border-top:1px solid color-mix(in srgb,var(--sec) 22%,var(--bg))
 section h2{color:color-mix(in srgb,var(--sec) 55%,var(--text))}
 section h2{font-size:1.8rem;margin:0 0 8px;letter-spacing:-.01em}
 .lead{color:var(--muted);margin:0 0 32px;max-width:40em}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.card{--c:var(--accent);background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--c);border-radius:16px;padding:24px;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(2,minmax(0,1fr))}
+.card{--c:var(--accent);background:var(--surface);position:relative;overflow:hidden;border:1px solid var(--border);border-radius:16px;padding:28px 24px 24px;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--c)}
 .card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -14px color-mix(in srgb,var(--c) 55%,transparent)}
-.card:nth-child(1){--c:#4f46e5}.card:nth-child(2){--c:#0ea5e9}.card:nth-child(3){--c:#10b981}.card:nth-child(4){--c:#f59e0b}
+.card:nth-child(4n+1){--c:#4f46e5}.card:nth-child(4n+2){--c:#0ea5e9}.card:nth-child(4n+3){--c:#10b981}.card:nth-child(4n){--c:#f59e0b}
+.card h3 a{color:inherit;text-decoration:none}.card h3 a:hover{color:var(--c)}
 .card h3{margin:0 0 6px;font-size:1.1rem;font-family:var(--mono);overflow-wrap:anywhere}
 .card p{color:var(--muted);margin:0 0 16px;flex:1}
-.card pre{font-size:.78rem;padding:12px 14px;margin-bottom:16px;box-shadow:none}
+.card pre{font-size:.82rem;padding:12px 14px;margin-bottom:16px;box-shadow:none}
 .badge{align-self:flex-start;font-size:.75rem;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-bottom:12px}
 .badge.ok{color:var(--ok)}.badge.warn{color:var(--warn)}
 .links a{margin-right:16px;font-weight:600;font-size:.95rem}
@@ -53,5 +55,25 @@ section h2{font-size:1.8rem;margin:0 0 8px;letter-spacing:-.01em}
 .principles h3{margin:0 0 4px;font-size:1.05rem}
 .principles p{margin:0;color:var(--muted);font-size:.95rem}
 footer{border-top:1px solid var(--border);padding:32px 0;color:var(--muted);font-size:.9rem}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:48px}nav a:not(:last-child){display:none}}
+@media(max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}.hero{grid-template-columns:1fr;padding-top:48px}nav a:not(:last-child){display:none}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card{transition:none}.btn:hover,.card:hover{transform:none}}
+
+/* Styled scrollbars for every scrollable element */
+*{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--accent) 45%,transparent) transparent}
+::-webkit-scrollbar{height:6px;width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--accent) 45%,transparent);border-radius:99px}
+::-webkit-scrollbar-thumb:hover{background:var(--accent)}
+
+/* Library search and copy buttons */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.search{margin:0 0 24px;max-width:420px}
+.search input{width:100%;font:inherit;padding:12px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);color:var(--text)}
+.search input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.empty{color:var(--muted)}
+[hidden]{display:none!important}
+.cmd{position:relative;margin-bottom:16px}
+.cmd pre{margin-bottom:0!important;padding-right:76px}
+.copy{position:absolute;top:50%;right:8px;transform:translateY(-50%);font:inherit;font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:var(--code-text);cursor:pointer}
+.copy:hover{background:rgba(255,255,255,.18)}
+.copy:focus-visible{outline:2px solid #fff;outline-offset:2px}

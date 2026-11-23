@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>phpmath: PHP libraries for mathematics</title>
-<meta name="description" content="phpmath is a family of consistent, well-tested, immutable PHP libraries for big numbers, vectors and more.">
+<meta name="description" content="phpmath is a family of consistent, well-tested, immutable PHP libraries for big numbers, fractions, vectors, matrices and more.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -22,15 +22,15 @@
 <div class="glow"><div class="wrap hero">
   <div>
     <h1>Precise math for modern PHP.</h1>
-    <p>Big numbers, vectors and more. Every library is immutable, fully tested and built to the same standard, so they all work the same way.</p>
+    <p>Big numbers, fractions, vectors, matrices and more. Every library is immutable, fully tested and built to the same standard, so they all work the same way.</p>
     <a class="btn primary" href="#libraries">Browse libraries</a>
     <a class="btn" href="https://github.com/phpmath">View on GitHub</a>
   </div>
 <pre><span class="c">// Arbitrary-precision integers, always immutable</span>
-<span class="k">use</span> PHP\Math\BigInteger\ImmutableBigInteger;
+<span class="k">use</span> PHPMath\BigInteger\BigInteger;
 
-<span class="k">$a</span> = <span class="k">new</span> <span class="f">ImmutableBigInteger</span>(<span class="s">'12345678901234567890'</span>);
-<span class="k">$b</span> = <span class="k">new</span> <span class="f">ImmutableBigInteger</span>(<span class="s">'98765432109876543210'</span>);
+<span class="k">$a</span> = <span class="k">new</span> <span class="f">BigInteger</span>(<span class="s">'12345678901234567890'</span>);
+<span class="k">$b</span> = <span class="k">new</span> <span class="f">BigInteger</span>(<span class="s">'98765432109876543210'</span>);
 
 <span class="k">echo</span> <span class="k">$a</span>-&gt;<span class="f">add</span>(<span class="k">$b</span>)-&gt;<span class="f">value</span>();
 <span class="c">// 111111111011111111100</span></pre>
@@ -38,35 +38,84 @@
 
 <section id="libraries"><div class="wrap">
   <h2>Libraries</h2>
-  <p class="lead">Each library is installable through Composer and published on Packagist.</p>
+  <p class="lead">Twelve libraries, one standard. Each installs through Composer.</p>
+  <div class="search" hidden>
+    <label class="sr" for="q">Search libraries</label>
+    <input id="q" type="search" placeholder="Search libraries" autocomplete="off">
+  </div>
+  <p class="empty" id="empty" hidden>No libraries match your search.</p>
   <div class="grid">
     <article class="card">
-      <span class="badge ok">Active</span>
-      <h3>phpmath/biginteger</h3>
+      <h3><a href="biginteger/">phpmath/biginteger</a></h3>
       <p>Integers of any size, built on the GMP extension.</p>
       <pre>composer require phpmath/biginteger</pre>
-      <div class="links"><a href="https://github.com/phpmath/biginteger">GitHub</a><a href="https://packagist.org/packages/phpmath/biginteger">Packagist</a></div>
+      <div class="links"><a href="biginteger/">Documentation</a><a href="https://github.com/phpmath/biginteger">GitHub</a><a href="https://packagist.org/packages/phpmath/biginteger">Packagist</a></div>
     </article>
     <article class="card">
-      <span class="badge warn">Being modernized</span>
-      <h3>phpmath/bignumber</h3>
+      <h3><a href="bignumber/">phpmath/bignumber</a></h3>
       <p>Numbers of any size and precision, including decimals.</p>
       <pre>composer require phpmath/bignumber</pre>
-      <div class="links"><a href="https://github.com/phpmath/bignumber">GitHub</a><a href="https://packagist.org/packages/phpmath/bignumber">Packagist</a></div>
+      <div class="links"><a href="bignumber/">Documentation</a><a href="https://github.com/phpmath/bignumber">GitHub</a><a href="https://packagist.org/packages/phpmath/bignumber">Packagist</a></div>
     </article>
     <article class="card">
-      <span class="badge warn">Being modernized</span>
-      <h3>phpmath/vector</h3>
+      <h3><a href="fraction/">phpmath/fraction</a></h3>
+      <p>Exact rational numbers that never lose precision.</p>
+      <pre>composer require phpmath/fraction</pre>
+      <div class="links"><a href="fraction/">Documentation</a><a href="https://github.com/phpmath/fraction">GitHub</a><a href="https://packagist.org/packages/phpmath/fraction">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="vector/">phpmath/vector</a></h3>
       <p>Vectors in two and three dimensions: dot and cross products, scaling and normalization.</p>
       <pre>composer require phpmath/vector</pre>
-      <div class="links"><a href="https://github.com/phpmath/vector">GitHub</a><a href="https://packagist.org/packages/phpmath/vector">Packagist</a></div>
+      <div class="links"><a href="vector/">Documentation</a><a href="https://github.com/phpmath/vector">GitHub</a><a href="https://packagist.org/packages/phpmath/vector">Packagist</a></div>
     </article>
     <article class="card">
-      <span class="badge">Tooling</span>
-      <h3>phpmath/coding-standard</h3>
+      <h3><a href="matrix/">phpmath/matrix</a></h3>
+      <p>Matrices with arithmetic, determinants, inverses and transposes.</p>
+      <pre>composer require phpmath/matrix</pre>
+      <div class="links"><a href="matrix/">Documentation</a><a href="https://github.com/phpmath/matrix">GitHub</a><a href="https://packagist.org/packages/phpmath/matrix">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="complex/">phpmath/complex</a></h3>
+      <p>Complex numbers with polar form, powers and roots.</p>
+      <pre>composer require phpmath/complex</pre>
+      <div class="links"><a href="complex/">Documentation</a><a href="https://github.com/phpmath/complex">GitHub</a><a href="https://packagist.org/packages/phpmath/complex">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="quaternion/">phpmath/quaternion</a></h3>
+      <p>Quaternions for 3D rotation, with axis-angle and slerp.</p>
+      <pre>composer require phpmath/quaternion</pre>
+      <div class="links"><a href="quaternion/">Documentation</a><a href="https://github.com/phpmath/quaternion">GitHub</a><a href="https://packagist.org/packages/phpmath/quaternion">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="polynomial/">phpmath/polynomial</a></h3>
+      <p>Polynomials with arithmetic, evaluation, derivatives and roots.</p>
+      <pre>composer require phpmath/polynomial</pre>
+      <div class="links"><a href="polynomial/">Documentation</a><a href="https://github.com/phpmath/polynomial">GitHub</a><a href="https://packagist.org/packages/phpmath/polynomial">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="number-theory/">phpmath/number-theory</a></h3>
+      <p>Primes, factorization, modular arithmetic and the Chinese remainder theorem.</p>
+      <pre>composer require phpmath/number-theory</pre>
+      <div class="links"><a href="number-theory/">Documentation</a><a href="https://github.com/phpmath/number-theory">GitHub</a><a href="https://packagist.org/packages/phpmath/number-theory">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="statistics/">phpmath/statistics</a></h3>
+      <p>Descriptive statistics, the normal distribution and linear regression.</p>
+      <pre>composer require phpmath/statistics</pre>
+      <div class="links"><a href="statistics/">Documentation</a><a href="https://github.com/phpmath/statistics">GitHub</a><a href="https://packagist.org/packages/phpmath/statistics">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="geometry/">phpmath/geometry</a></h3>
+      <p>Points, lines, circles, rectangles and polygons.</p>
+      <pre>composer require phpmath/geometry</pre>
+      <div class="links"><a href="geometry/">Documentation</a><a href="https://github.com/phpmath/geometry">GitHub</a><a href="https://packagist.org/packages/phpmath/geometry">Packagist</a></div>
+    </article>
+    <article class="card">
+      <h3><a href="coding-standard/">phpmath/coding-standard</a></h3>
       <p>The shared coding standard every phpmath library follows.</p>
       <pre>composer require --dev phpmath/coding-standard</pre>
-      <div class="links"><a href="https://github.com/phpmath/coding-standard">GitHub</a><a href="https://packagist.org/packages/phpmath/coding-standard">Packagist</a></div>
+      <div class="links"><a href="coding-standard/">Documentation</a><a href="https://github.com/phpmath/coding-standard">GitHub</a><a href="https://packagist.org/packages/phpmath/coding-standard">Packagist</a></div>
     </article>
   </div>
 </div></section>
@@ -78,7 +127,7 @@
     <div><h3>Consistent</h3><p>The same coding standard, structure, naming and documentation everywhere.</p></div>
     <div><h3>Modern PHP</h3><p>Only supported PHP versions, with strict types and native type declarations.</p></div>
     <div><h3>Well tested</h3><p>Unit tests, coverage and static analysis run on every change.</p></div>
-    <div><h3>Immutable by design</h3><p>Every number and vector is an immutable value object, always safe to share.</p></div>
+    <div><h3>Immutable by design</h3><p>Every number, vector and matrix is an immutable value object, always safe to share.</p></div>
   </div>
 </div></section>
 
@@ -90,5 +139,29 @@
 </main>
 
 <footer><div class="wrap">© phpmath contributors · Released under the MIT license · <a href="https://github.com/phpmath/phpmath.github.io">Edit this page</a></div></footer>
+<script>
+(function(){
+  var search=document.querySelector('.search'),q=document.getElementById('q'),empty=document.getElementById('empty');
+  var cards=[].slice.call(document.querySelectorAll('.card'));
+  if(search){search.hidden=false;q.addEventListener('input',function(){
+    var t=q.value.trim().toLowerCase(),n=0;
+    cards.forEach(function(c){var m=c.textContent.toLowerCase().indexOf(t)>-1;c.hidden=!m;if(m)n++;});
+    empty.hidden=n>0;
+  });}
+  cards.forEach(function(c){
+    var pre=c.querySelector('pre');if(!pre)return;
+    var wrap=document.createElement('div');wrap.className='cmd';
+    pre.parentNode.insertBefore(wrap,pre);wrap.appendChild(pre);
+    var b=document.createElement('button');b.type='button';b.className='copy';b.textContent='Copy';
+    b.setAttribute('aria-label','Copy command for '+c.querySelector('h3').textContent);
+    b.addEventListener('click',function(){
+      var done=function(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1500);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(pre.textContent.trim()).then(done,function(){});}
+      else{var r=document.createRange();r.selectNodeContents(pre);var s=getSelection();s.removeAllRanges();s.addRange(r);try{document.execCommand('copy');done();}catch(e){}s.removeAllRanges();}
+    });
+    wrap.appendChild(b);
+  });
+})();
+</script>
 </body>
 </html>
