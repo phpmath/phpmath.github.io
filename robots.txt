@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://phpmath.github.io/sitemap.xml
+Sitemap: https://phpmath.github.io/biginteger/sitemap.xml
+Sitemap: https://phpmath.github.io/bignumber/sitemap.xml
+Sitemap: https://phpmath.github.io/vector/sitemap.xml
+Sitemap: https://phpmath.github.io/matrix/sitemap.xml
+Sitemap: https://phpmath.github.io/complex/sitemap.xml
+Sitemap: https://phpmath.github.io/quaternion/sitemap.xml
+Sitemap: https://phpmath.github.io/geometry/sitemap.xml
+Sitemap: https://phpmath.github.io/statistics/sitemap.xml
+Sitemap: https://phpmath.github.io/fraction/sitemap.xml
+Sitemap: https://phpmath.github.io/number-theory/sitemap.xml
+Sitemap: https://phpmath.github.io/polynomial/sitemap.xml
+Sitemap: https://phpmath.github.io/coding-standard/sitemap.xml
